@@ -1,0 +1,4 @@
+rootProject.name = 'L02P02-TUM-Social-App-[Strangler-Pattern]-Exercise'
+include 'follow-microservice'
+include 'tweet-microservice'
+include 'login-microservice'
