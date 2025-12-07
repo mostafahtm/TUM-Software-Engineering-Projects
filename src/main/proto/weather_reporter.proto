@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "de.tum.in.ase.eist.grpc";
+option java_outer_classname = "WeatherReporterProto";
+
+// Interface exported by the server.
+service WeatherReporter {
+
+  //TODO: Create the signature for GetCityWeatherSingleDay()
+  rpc GetCityWeatherSingleDay(LocationDate) returns (CityWeatherData);
+  //TODO: Create the signature for GetCityWeatherMultipleDays()
+  rpc GetCityWeatherMultipleDays(LocationDatePeriod) returns (stream CityWeatherData);
+}
+
+message Weather {
+  //TODO: Complete the signature for Weather
+  float temperature = 1;
+  float humidity = 2;
+  float wind = 3;
+}
+
+message Date {
+  //TODO: Complete the signature for Date
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+}
+
+message Location {
+  //TODO: Complete the signature for Location
+  string city = 1;
+  string country = 2;
+}
+
+message LocationDate {
+  //TODO: Complete the signature for LocationDate
+  Location location = 1;
+  Date date = 2;
+}
+
+message LocationDatePeriod {
+  //TODO: Complete the signature for LocationDatePeriod
+  Location location = 1;
+  Date startDate = 2;
+  Date endDate = 3;
+}
+
+message CityWeatherData {
+  //TODO: Complete the signature for CityWeatherData
+  Weather weather = 1;
+  LocationDate locationDate = 2;
+}
